@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Sensitive files
+testplatform-4d3fe-firebase-adminsdk-fbsvc-0a2375fd43.json
