@@ -1,0 +1,166 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "web2x portal":
+    - /url: /
+    - img "web2x portal"
+  - menu:
+    - menuitem "WEB2X란?":
+      - link "WEB2X란?":
+        - /url: /about
+    - menuitem "상품":
+      - link "상품":
+        - /url: /products
+    - menuitem "개발 가이드":
+      - link "개발 가이드":
+        - /url: /document/api/v1
+    - menuitem "고객 지원":
+      - link "고객 지원":
+        - /url: /supports/notice
+    - menuitem "프로젝트":
+      - link "프로젝트":
+        - /url: /projects
+    - menuitem "스캐너":
+      - link "스캐너":
+        - /url: https://scanner.web2x.io
+  - button "로그인"
+- main:
+  - button "Chatbot 문의 Chatbot 문의":
+    - img "Chatbot 문의"
+    - text: Chatbot 문의
+  - paragraph: Web3 Development Platform for Everyone,
+  - img "web2x"
+  - text: 웹투엑스는 누구나 쉽고 간편하게 API를 호출하여 블록체인 기술을 적용할 수 있도록 도와주는 API 제공 서비스입니다.
+  - img
+  - list:
+    - listitem:
+      - button "1"
+    - listitem:
+      - button "2"
+    - listitem:
+      - button "3"
+    - listitem:
+      - button "4"
+  - text: What’s New Notice [중요] WEB2X 시스템 점검 안내 2025/01/08 About WEB2X WEB2X 소개 영상 블록체인? 웹3? 어려워하지 마세요. WEB2X는 API 연동만으로 기존 서비스에 블록체인 기술을 적용할 수 있습니다. 지금 바로 소개 영상으로 WEB2X의 가치와 적용 사례를 확인하세요.
+  - img "image"
+  - text: SNS WEB2X on Medium WEB2X의 인사이트와 블록체인 도입 사례, API 활용법을 Medium에서 확인해보세요.
+  - img "image"
+  - text: Tutorial API 연동 가이드 영상 웹3는 처음이라, API를 잘몰라서, 개발이 어려우셨나요? WEB2X API 연동가이드를 따라하면, 누구나 쉽게 기술 적용이 가능합니다! 지금 바로 나만의 웹3 지갑과 WEB2X상품을 만들어 보세요! 2024.11.28 Today's Hot API Product 입장권 진짜인지 가짜인지 확인하기 어려운 입장권 누구나 실소유자를 확인할 수 있는 블록체인 기반 입장권으로 안전하고 깨끗한 공연 예매 문화를 제공하세요
+  - img "image"
+  - list:
+    - listitem:
+      - button "1"
+    - listitem:
+      - button "2"
+  - paragraph: Recommended product
+  - text: 쿠폰 고객들에게 안전하게 제공할 수 있는 블록체인 쿠폰을 발행하여, 할인 혜택과 특별 프로모션을 간편하게 관리할 수 있습니다.
+  - img "쿠폰"
+  - text: 시즌권 스포츠 경기나 공연 등 특정 시즌 동안 혜택을 누릴 수 있는 시즌권을, 블록체인 기반으로 위변조 걱정 없이 편리하게 발급하고 사용할 수 있습니다.
+  - img "시즌권"
+  - text: 기념 배지 특별한 순간을 기념하는 배지를 위조 걱정 없이 안전하게 발행하고, 간편하게 보관/관리할 수 있습니다.
+  - img "기념 배지"
+  - text: Category
+  - img "입장권"
+  - text: 입장권
+  - img "디지털 포토카드"
+  - text: 디지털 포토카드
+  - img "교환권"
+  - text: 교환권
+  - img "시즌권"
+  - text: 시즌권
+  - img "멤버십"
+  - text: 멤버십
+  - img "쿠폰"
+  - text: 쿠폰
+  - img "기념 배지"
+  - text: 기념 배지
+  - img "증명서"
+  - text: 증명서
+  - img "투표"
+  - text: 투표
+  - img "디지털 문서"
+  - text: 디지털 문서
+  - img "디지털 워터마크"
+  - text: 디지털 워터마크
+  - img "디지털 갤러리"
+  - text: 디지털 갤러리
+  - img "랜덤 체크"
+  - text: 랜덤 체크
+  - img "환율 정보 획득"
+  - text: 환율 정보 획득
+  - img "NFT 활동 알림"
+  - text: NFT 활동 알림
+  - img "NFT 토큰 교환"
+  - text: NFT 토큰 교환
+  - paragraph: Company introduction
+  - text: WEB3 platform tech company 씨피랩스
+  - list:
+    - listitem: 블록체인 특허 출원 320+
+    - listitem: 블록체인 서비스 경험 1000만+
+    - listitem: 블록체인 사업 10년+
+    - listitem: 고객 및 파트너사 250개+
+  - img
+  - text: Awards / Certification 인증 & 수상 내역
+  - list:
+    - listitem: 2022 VASP 취득
+    - listitem: 2021 과기부 규제샌드박스 승인
+    - listitem: 2020 금융위 혁신금융서비스
+    - listitem: 과기부 장관상 블록체인 부분 3회 (2018, 2020, 2021년) 수상
+  - img
+  - text: Partners 파트너스
+  - list:
+    - listitem: 현대카드
+    - listitem: KB 국민은행
+    - listitem: WEMADE
+    - listitem: SK Telecom
+  - img
+  - img "web2x portal"
+  - heading "ChatBot" [level=5]
+  - img
+  - img "chatbot"
+  - heading "WEB2X Admin" [level=5]
+  - text: 안녕하세요! WEB2X 챗봇입니다. 궁금하신 사항을 질문해주세요 오후 02:56 WEB2X가 무엇인가요? WEB2X 사용하면 블록체인 개발 필요 없나요? WEB2X 기존 서비스에 어떻게 연동할 수 있나요?
+  - textbox "궁금하신 사항을 입력해주세요."
+  - button:
+    - img
+- contentinfo:
+  - img "web2x portal"
+  - heading "웹투엑스" [level=5]
+  - heading "주식회사 씨피랩스" [level=5]
+  - heading "경기도 성남시 수정구 달래내로 46(시흥동) 제2판교 성남글로벌융합센터 B동 710호" [level=5]
+  - link:
+    - /url: https://twitter.com/CPLABS_OFFICIAL
+    - img
+  - link:
+    - /url: https://medium.com/cplabs-official
+    - img
+  - link:
+    - /url: https://www.linkedin.com/company/cplabs-official
+    - img
+  - link:
+    - /url: https://www.youtube.com/@CPLABS-OFFICIAL
+    - img
+  - list:
+    - listitem:
+      - link "이용약관":
+        - /url: /policy/terms
+    - listitem:
+      - link "개인정보 처리방침":
+        - /url: /policy/privacy
+  - text: © 2024 CPLABS. All Rights Reserved.
+- alert
+- dialog "WEB2X 이용가이드":
+  - button "Close":
+    - img
+  - text: WEB2X 이용가이드 WEB2X는 웹3 블록체인 기술을 쉽고 편하게 사용할 수 있도록 API를 제공해주는 서비스예요. WEB2X에 대한 자세한 정보는
+  - strong: ‘WEB2X란?’
+  - text: 에서 확인할 수 있어요.
+  - img "서비스 소개"
+  - text: 제휴를 맺고 싶거나, 서비스에 대한 궁금한 사항이 있다면 홈 우측에 있는
+  - strong: ‘문의하기'
+  - text: 를 통해 문의해주세요.
+  - img "서비스 소개"
+  - button "다음"
+  - text: 다시 보지 않기
+```
