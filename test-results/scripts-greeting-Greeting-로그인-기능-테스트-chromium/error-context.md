@@ -1,0 +1,307 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - button [ref=e4] [cursor=pointer]:
+      - img [ref=e5] [cursor=pointer]
+    - generic [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e12] [cursor=pointer]: 재
+          - separator [ref=e13]
+        - navigation [ref=e14]:
+          - list [ref=e15]:
+            - listitem [ref=e16] [cursor=pointer]:
+              - generic [ref=e18] [cursor=pointer]: ATS
+            - listitem [ref=e19] [cursor=pointer]:
+              - link "Job site" [ref=e20] [cursor=pointer]:
+                - /url: /career/2183/settings/design
+                - generic [ref=e21] [cursor=pointer]: Job site
+            - listitem [ref=e22] [cursor=pointer]:
+              - link "Forms" [ref=e23] [cursor=pointer]:
+                - /url: /forms/en/workspace/2183
+                - generic [ref=e24] [cursor=pointer]: Forms
+            - listitem [ref=e25] [cursor=pointer]:
+              - generic [ref=e27] [cursor=pointer]: TRM
+        - generic [ref=e28]:
+          - button "3" [ref=e30] [cursor=pointer]:
+            - img [ref=e31] [cursor=pointer]
+            - generic [ref=e35] [cursor=pointer]: "3"
+          - button "최" [ref=e36] [cursor=pointer]:
+            - generic [ref=e37] [cursor=pointer]: 최
+      - generic [ref=e38]:
+        - generic [ref=e41]:
+          - button [ref=e45] [cursor=pointer]:
+            - img [ref=e47] [cursor=pointer]
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - link "Job" [ref=e51] [cursor=pointer]:
+                - /url: /workspace/2183/openings
+                - listitem [ref=e52] [cursor=pointer]:
+                  - generic [ref=e54] [cursor=pointer]:
+                    - img [ref=e55] [cursor=pointer]
+                    - generic [ref=e57] [cursor=pointer]: Job
+              - link "My Task" [ref=e58] [cursor=pointer]:
+                - /url: /workspace/2183/todos
+                - listitem [ref=e59] [cursor=pointer]:
+                  - generic [ref=e61] [cursor=pointer]:
+                    - img [ref=e62] [cursor=pointer]
+                    - generic [ref=e64] [cursor=pointer]: My Task
+              - link "Interview" [ref=e65] [cursor=pointer]:
+                - /url: /workspace/2183/interviews
+                - listitem [ref=e66] [cursor=pointer]:
+                  - generic [ref=e68] [cursor=pointer]:
+                    - img [ref=e69] [cursor=pointer]
+                    - generic [ref=e71] [cursor=pointer]: Interview
+              - link "Candidate" [ref=e72] [cursor=pointer]:
+                - /url: /workspace/2183/applicants
+                - listitem [ref=e73] [cursor=pointer]:
+                  - generic [ref=e75] [cursor=pointer]:
+                    - img [ref=e76] [cursor=pointer]
+                    - generic [ref=e78] [cursor=pointer]: Candidate
+              - link "Template" [ref=e79] [cursor=pointer]:
+                - /url: /workspace/2183/forms
+                - listitem [ref=e80] [cursor=pointer]:
+                  - generic [ref=e82] [cursor=pointer]:
+                    - img [ref=e83] [cursor=pointer]
+                    - generic [ref=e85] [cursor=pointer]: Template
+              - link "Settings" [ref=e86] [cursor=pointer]:
+                - /url: /workspace/2183/settings
+                - listitem [ref=e87] [cursor=pointer]:
+                  - generic [ref=e89] [cursor=pointer]:
+                    - img [ref=e90] [cursor=pointer]
+                    - generic [ref=e92] [cursor=pointer]: Settings
+            - generic [ref=e93]:
+              - generic [ref=e94]: Jobs
+              - generic [ref=e95]:
+                - button [ref=e97] [cursor=pointer]:
+                  - img [ref=e99] [cursor=pointer]
+                - button [ref=e102] [cursor=pointer]:
+                  - img [ref=e104] [cursor=pointer]
+            - generic [ref=e108] [cursor=pointer]:
+              - generic [ref=e109] [cursor=pointer]: Favorites (0)
+              - button [ref=e110] [cursor=pointer]:
+                - img [ref=e112] [cursor=pointer]
+            - generic [ref=e114]:
+              - link "[JY 컴퍼니] 백엔드 엔지니어 개발자 모집 공고" [ref=e116] [cursor=pointer]:
+                - /url: /workspace/2183/opening/8340/kanban
+                - listitem [ref=e117] [cursor=pointer]:
+                  - generic [ref=e120] [cursor=pointer]:
+                    - img [ref=e121] [cursor=pointer]
+                    - generic [ref=e123] [cursor=pointer]: "[JY 컴퍼니] 백엔드 엔지니어 개발자 모집 공고"
+              - link "[JY 컴퍼니] 대규모 채용 공고" [ref=e125] [cursor=pointer]:
+                - /url: /workspace/2183/opening/8343/kanban
+                - listitem [ref=e126] [cursor=pointer]:
+                  - generic [ref=e129] [cursor=pointer]:
+                    - img [ref=e130] [cursor=pointer]
+                    - generic [ref=e132] [cursor=pointer]: "[JY 컴퍼니] 대규모 채용 공고"
+              - link "adfadfadfadfa" [ref=e134] [cursor=pointer]:
+                - /url: /workspace/2183/opening/8354/kanban
+                - listitem [ref=e135] [cursor=pointer]:
+                  - generic [ref=e138] [cursor=pointer]:
+                    - img [ref=e139] [cursor=pointer]
+                    - generic [ref=e141] [cursor=pointer]: adfadfadfadfa
+          - button [ref=e142] [cursor=pointer]:
+            - img [ref=e143] [cursor=pointer]
+          - generic [ref=e145]:
+            - button "Support" [ref=e146] [cursor=pointer]:
+              - generic [ref=e147] [cursor=pointer]:
+                - img [ref=e148] [cursor=pointer]
+                - generic [ref=e150] [cursor=pointer]: Support
+            - button "User Guide" [ref=e151] [cursor=pointer]:
+              - generic [ref=e152] [cursor=pointer]:
+                - img [ref=e153] [cursor=pointer]
+                - generic [ref=e155] [cursor=pointer]: User Guide
+        - generic [ref=e158]:
+          - banner [ref=e159]:
+            - heading "Job Create a job" [ref=e160]:
+              - img [ref=e161]
+              - heading "Job" [level=1] [ref=e163]
+              - button "Create a job" [ref=e164] [cursor=pointer]:
+                - generic [ref=e165] [cursor=pointer]:
+                  - img [ref=e166] [cursor=pointer]
+                  - generic [ref=e168] [cursor=pointer]: Create a job
+            - tablist [ref=e170]:
+              - tab "Jobs" [selected] [ref=e172] [cursor=pointer]
+              - tab "Archive" [ref=e173] [cursor=pointer]
+          - generic [ref=e174]:
+            - generic [ref=e177]:
+              - img [ref=e178]
+              - textbox [ref=e180]
+            - generic [ref=e182]:
+              - generic [ref=e184] [cursor=pointer]:
+                - generic [ref=e186] [cursor=pointer]: "Access status: Joined"
+                - img [ref=e187] [cursor=pointer]
+              - button "Add filter" [ref=e190] [cursor=pointer]:
+                - generic [ref=e191] [cursor=pointer]:
+                  - img [ref=e192] [cursor=pointer]
+                  - generic [ref=e194] [cursor=pointer]: Add filter
+            - generic [ref=e196]:
+              - button [ref=e199] [cursor=pointer]:
+                - img [ref=e201] [cursor=pointer]
+              - tablist [ref=e204]:
+                - tab [selected] [ref=e206] [cursor=pointer]:
+                  - img [ref=e207] [cursor=pointer]
+                - tab [ref=e210] [cursor=pointer]:
+                  - img [ref=e211] [cursor=pointer]
+          - generic [ref=e214]:
+            - generic [ref=e215] [cursor=pointer]:
+              - generic [ref=e216] [cursor=pointer]:
+                - generic [ref=e217] [cursor=pointer]:
+                  - generic [ref=e219] [cursor=pointer]:
+                    - generic [ref=e222] [cursor=pointer]:
+                      - img [ref=e223] [cursor=pointer]
+                      - text: Open
+                    - img [ref=e225] [cursor=pointer]
+                  - button [ref=e229] [cursor=pointer]:
+                    - img [ref=e230] [cursor=pointer]
+                - generic [ref=e232] [cursor=pointer]: adfadfadfadfa
+                - generic [ref=e233] [cursor=pointer]:
+                  - generic [ref=e236] [cursor=pointer]: JY 컴퍼니
+                  - generic [ref=e239] [cursor=pointer]: Devops
+                - generic [ref=e240] [cursor=pointer]:
+                  - generic [ref=e241] [cursor=pointer]:
+                    - img [ref=e242] [cursor=pointer]
+                    - generic [ref=e244] [cursor=pointer]: Sep 02 2025
+                  - generic [ref=e245] [cursor=pointer]:
+                    - generic [ref=e247] [cursor=pointer]: Closing Date D-0
+                    - img [ref=e249] [cursor=pointer]
+              - generic [ref=e252] [cursor=pointer]:
+                - generic [ref=e253] [cursor=pointer]:
+                  - generic [ref=e254] [cursor=pointer]: All
+                  - generic [ref=e255] [cursor=pointer]: "0"
+                - separator [ref=e256] [cursor=pointer]
+                - generic [ref=e257] [cursor=pointer]:
+                  - generic [ref=e258] [cursor=pointer]: In process
+                  - generic [ref=e259] [cursor=pointer]: "0"
+                - generic [ref=e260] [cursor=pointer]:
+                  - generic [ref=e261] [cursor=pointer]: Disqualified
+                  - generic [ref=e262] [cursor=pointer]: "0"
+                - generic [ref=e263] [cursor=pointer]:
+                  - generic [ref=e264] [cursor=pointer]: Hired
+                  - generic [ref=e265] [cursor=pointer]: "0"
+            - generic [ref=e266] [cursor=pointer]:
+              - generic [ref=e267] [cursor=pointer]:
+                - generic [ref=e268] [cursor=pointer]:
+                  - generic [ref=e270] [cursor=pointer]:
+                    - generic [ref=e273] [cursor=pointer]:
+                      - img [ref=e274] [cursor=pointer]
+                      - text: Open
+                    - img [ref=e276] [cursor=pointer]
+                  - button [ref=e280] [cursor=pointer]:
+                    - img [ref=e281] [cursor=pointer]
+                - generic [ref=e283] [cursor=pointer]: "[JY 컴퍼니] 대규모 채용 공고"
+                - generic [ref=e284] [cursor=pointer]:
+                  - generic [ref=e287] [cursor=pointer]: JY 컴퍼니
+                  - generic [ref=e289] [cursor=pointer]:
+                    - generic [ref=e290] [cursor=pointer]: 개발
+                    - generic [ref=e291] [cursor=pointer]: etc
+                - generic [ref=e292] [cursor=pointer]:
+                  - generic [ref=e293] [cursor=pointer]:
+                    - img [ref=e294] [cursor=pointer]
+                    - generic [ref=e296] [cursor=pointer]: Sep 01 2025
+                  - generic [ref=e297] [cursor=pointer]:
+                    - generic [ref=e299] [cursor=pointer]: Closing Date D-3
+                    - img [ref=e301] [cursor=pointer]
+              - generic [ref=e304] [cursor=pointer]:
+                - generic [ref=e305] [cursor=pointer]:
+                  - generic [ref=e306] [cursor=pointer]: All
+                  - generic [ref=e307] [cursor=pointer]: "7"
+                - separator [ref=e308] [cursor=pointer]
+                - generic [ref=e309] [cursor=pointer]:
+                  - generic [ref=e310] [cursor=pointer]: In process
+                  - generic [ref=e311] [cursor=pointer]: "6"
+                - generic [ref=e312] [cursor=pointer]:
+                  - generic [ref=e313] [cursor=pointer]: Disqualified
+                  - generic [ref=e314] [cursor=pointer]: "1"
+                - generic [ref=e315] [cursor=pointer]:
+                  - generic [ref=e316] [cursor=pointer]: Hired
+                  - generic [ref=e317] [cursor=pointer]: "0"
+            - generic [ref=e318] [cursor=pointer]:
+              - generic [ref=e319] [cursor=pointer]:
+                - generic [ref=e320] [cursor=pointer]:
+                  - generic [ref=e322] [cursor=pointer]:
+                    - generic [ref=e325] [cursor=pointer]:
+                      - img [ref=e326] [cursor=pointer]
+                      - text: Open
+                    - img [ref=e328] [cursor=pointer]
+                  - button [ref=e332] [cursor=pointer]:
+                    - img [ref=e333] [cursor=pointer]
+                - generic [ref=e335] [cursor=pointer]: "[JY 컴퍼니] 백엔드 엔지니어 개발자 모집 공고"
+                - generic [ref=e339] [cursor=pointer]: 개발
+                - generic [ref=e340] [cursor=pointer]:
+                  - generic [ref=e341] [cursor=pointer]:
+                    - img [ref=e342] [cursor=pointer]
+                    - generic [ref=e344] [cursor=pointer]: Aug 28 2025
+                  - img [ref=e347] [cursor=pointer]
+              - generic [ref=e350] [cursor=pointer]:
+                - generic [ref=e351] [cursor=pointer]:
+                  - generic [ref=e352] [cursor=pointer]: All
+                  - generic [ref=e353] [cursor=pointer]: "10"
+                - separator [ref=e354] [cursor=pointer]
+                - generic [ref=e355] [cursor=pointer]:
+                  - generic [ref=e356] [cursor=pointer]: In process
+                  - generic [ref=e357] [cursor=pointer]: "5"
+                - generic [ref=e358] [cursor=pointer]:
+                  - generic [ref=e359] [cursor=pointer]: Disqualified
+                  - generic [ref=e360] [cursor=pointer]: "4"
+                - generic [ref=e361] [cursor=pointer]:
+                  - generic [ref=e362] [cursor=pointer]: Hired
+                  - generic [ref=e363] [cursor=pointer]: "1"
+  - dialog [active] [ref=e365]:
+    - generic [ref=e368]:
+      - button "close" [ref=e369] [cursor=pointer]:
+        - img [ref=e370] [cursor=pointer]
+      - generic [ref=e372]:
+        - generic [ref=e373]: Aug 06 2025
+        - generic [ref=e374]: Greeting Feature Update
+        - generic [ref=e375]: 지원서의 정보 수정이 더 자유로워 졌으며, 이제 하나의 공고 내에서 지원자마다 서로 다른 평가를 배정할 수 있습니다.
+      - generic [ref=e376]:
+        - generic [ref=e378]: 1. 지원자∙관리자 모두, 제출한 지원서 정보를 수정할 수 있습니다
+        - img [ref=e379]
+        - generic [ref=e380]:
+          - generic [ref=e381]:
+            - generic [ref=e382]: 공고 마감일 내 지원자 수정 허용
+            - list [ref=e383]:
+              - listitem [ref=e384]:
+                - generic [ref=e385]:
+                  - text: 공고 마감일 설정 시,
+                  - generic [ref=e386]: 지원자가 제출한 지원서를 직접 수정할 수 있도록
+                  - text: 설정할 수 있습니다.
+              - listitem [ref=e387]: 수정이 허용된 경우, 지원자는 채용 홈페이지에서 마감 전까지 지원서 정보를 자유롭게 수정할 수 있습니다.
+              - listitem [ref=e388]: 관리자는 수정 내역을 [지원자 상세페이지 > 활동기록]에서 확인할 수 있습니다.
+            - generic [ref=e389]: 공고 관리자측 수정 범위 확대
+            - list [ref=e390]:
+              - listitem [ref=e391]:
+                - generic [ref=e392]:
+                  - text: 이제 제출된 지원서에 대해, 이름, 연락처뿐 아니라, 학력, 경력, 외부활동 등
+                  - generic [ref=e393]: 모든 항목을 관리자가 직접 수정
+                  - text: 할 수 있습니다.
+          - link "User Guide" [ref=e394] [cursor=pointer]:
+            - /url: https://help.greetinghr.com/docs/editappli
+            - text: User Guide
+            - img [ref=e396] [cursor=pointer]
+      - generic [ref=e398]:
+        - generic [ref=e400]: 2. 지원자별로 각각 다른 평가를 배정할 수 있습니다
+        - img [ref=e401]
+        - generic [ref=e402]:
+          - generic [ref=e403]:
+            - generic [ref=e404]:
+              - generic [ref=e405]: 단계 내 여러 개의 평가표 구성
+              - list [ref=e406]:
+                - listitem [ref=e407]: 채용 단계별 최대 20개까지 ‘평가표 + 평가자 그룹’ 세트를 설정할 수 있습니다.
+            - generic [ref=e408]:
+              - generic [ref=e409]: 지원자 선택 후, 원하는 평가를 배정
+              - list [ref=e410]:
+                - listitem [ref=e411]: 같은 채용 단계 내 지원자에게 서로 다른 ‘평가표 + 평가자 그룹’을 배정할 수 있습니다
+                - listitem [ref=e412]: 개별 지원자 단위로 특정 평가자를 추가하거나, 삭제할 수 있습니다.
+            - generic [ref=e413]:
+              - generic [ref=e414]: 평가자의 지원자 열람 범위 설정
+              - list [ref=e415]:
+                - listitem [ref=e416]: 본인이 평가자로 속한 채용 단계 내 지원자를 모두 열람할 수 있는 방식에서, 본인이 평가자로 배정된 지원자만 열람이 가능하도록 변경됩니다.
+          - link "User Guide" [ref=e417] [cursor=pointer]:
+            - /url: https://help.greetinghr.com/docs/stepev
+            - text: User Guide
+            - img [ref=e419] [cursor=pointer]
+```

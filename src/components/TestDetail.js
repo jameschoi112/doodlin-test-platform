@@ -8,7 +8,13 @@ import { motion } from 'framer-motion';
 import ErrorLogModal from './ErrorLogModal';
 
 const apiBaseUrl = `http://${window.location.hostname}:3001`;
-const socket = io(apiBaseUrl);
+const socket = io(apiBaseUrl, {
+  transports: ['websocket', 'polling'],
+  upgrade: true,
+  rememberUpgrade: true,
+  timeout: 20000,
+  forceNew: true
+});
 
 const TestDetail = ({ darkMode }) => {
   const { testId } = useParams();
@@ -47,6 +53,19 @@ const TestDetail = ({ darkMode }) => {
     
     socket.on('test:start', handleTestStart);
     socket.on('test:finish', handleTestFinish);
+    
+    // Socket.IO 연결 상태 및 에러 처리
+    socket.on('connect', () => {
+      console.log('Socket.IO connected:', socket.id);
+    });
+    
+    socket.on('connect_error', (error) => {
+      console.error('Socket.IO connection error:', error);
+    });
+    
+    socket.on('disconnect', (reason) => {
+      console.log('Socket.IO disconnected:', reason);
+    });
 
     return () => {
       unsub();
@@ -198,24 +217,36 @@ const TestDetail = ({ darkMode }) => {
               <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-4">Test Summary</h2>
               <ul className="space-y-3 text-sm">
                 <li className="flex justify-between">
-                  <span className="font-medium text-gray-500 dark:text-gray-400">Created At:</span>
-                  <span className="text-gray-800 dark:text-white">{testCase.createdAt?.toDate().toLocaleString() || 'N/A'}</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="font-medium text-gray-500 dark:text-gray-400">Last Run:</span>
-                  <span className="text-gray-800 dark:text-white">{testCase.lastRun?.toDate().toLocaleString() || 'N/A'}</span>
+                  <span className="font-medium text-gray-500 dark:text-gray-400">Environment:</span>
+                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${
+                    testCase.testEnvironment === 'prod' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
+                    testCase.testEnvironment === 'stage' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' :
+                    testCase.testEnvironment === 'dev' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
+                    testCase.testEnvironment === 'preview' ? 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' :
+                    'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
+                  }`}>
+                    {testCase.testEnvironment || 'N/A'}
+                  </span>
                 </li>
                 <li className="flex justify-between">
                   <span className="font-medium text-gray-500 dark:text-gray-400">Script:</span>
                   <span className="text-gray-800 dark:text-white">{testCase.scriptPath}</span>
                 </li>
                 <li className="flex justify-between">
+                  <span className="font-medium text-gray-500 dark:text-gray-400">Created At:</span>
+                  <span className="text-gray-800 dark:text-white">{testCase.createdAt?.toDate().toLocaleString() || 'N/A'}</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="font-medium text-gray-500 dark:text-gray-400">Last Run:</span>
+                  <span className="text-gray-800 dark:text-white">{testCase.lastRun?.toDate().toLocaleString() || '테스트 기록 없음'}</span>
+                </li>
+                <li className="flex justify-between">
                   <span className="font-medium text-gray-500 dark:text-gray-400">Created By:</span>
-                  <span className="text-gray-800 dark:text-white">{testCase.createdBy || 'N/A'}</span>
+                  <span className="text-gray-800 dark:text-white">{testCase.createdBy || '알 수 없음'}</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="font-medium text-gray-500 dark:text-gray-400">Duration:</span>
-                  <span className="text-gray-800 dark:text-white">{testCase.duration ? `${testCase.duration}s` : 'N/A'}</span>
+                  <span className="text-gray-800 dark:text-white">{testCase.duration ? `${testCase.duration}s` : '테스트 시작 후 출력됩니다.'}</span>
                 </li>
               </ul>
               <button onClick={handleRunTest} className="w-full mt-6 px-4 py-2 bg-sky-600 text-white rounded-lg shadow-sm hover:bg-sky-700 transition-colors disabled:bg-gray-400" disabled={status === 'In Progress'}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Type, TestTube, Briefcase, Search, Check, Link2, Loader } from 'lucide-react';
+import { X, Type, TestTube, Briefcase, Search, Check, Loader } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { db } from '../firebase';
 import { collection, doc, runTransaction, serverTimestamp, query, orderBy, onSnapshot } from 'firebase/firestore';
@@ -9,10 +9,9 @@ const AddTestModal = ({ isOpen, onClose, onTestAdded }) => {
   const [templates, setTemplates] = useState([]);
   const [formData, setFormData] = useState({
     templateId: '', // 'custom' 또는 템플릿 ID
-    testMethod: '자동',
+    testEnvironment: 'stage',
     testName: '',
     projectName: '',
-    testUrl: '',
     selectedScopes: [],
     scriptPath: '',
   });
@@ -76,8 +75,8 @@ const AddTestModal = ({ isOpen, onClose, onTestAdded }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.testName || !formData.testUrl || !formData.scriptPath) {
-      alert('테스트 이름, URL, 실행 스크립트를 모두 선택해주세요.');
+    if (!formData.testName || !formData.scriptPath) {
+      alert('테스트 이름과 실행 스크립트를 모두 선택해주세요.');
       return;
     }
     setIsLoading(true);
@@ -133,7 +132,7 @@ const AddTestModal = ({ isOpen, onClose, onTestAdded }) => {
   const t = {
     addTest: '새 테스트 추가',
     testType: '테스트 종류',
-    testMethod: '테스트 방법',
+    testEnvironment: '테스트 환경',
     testName: '테스트 이름',
     projectName: '프로젝트 이름',
     cancel: '취소',
@@ -145,7 +144,7 @@ const AddTestModal = ({ isOpen, onClose, onTestAdded }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4" onClick={onClose}>
+        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4">
           <motion.div
             onClick={(e) => e.stopPropagation()}
             className="bg-white dark:bg-cool-gray-800 rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
@@ -164,7 +163,7 @@ const AddTestModal = ({ isOpen, onClose, onTestAdded }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label className="flex items-center text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                    <TestTube className="w-4 h-4 mr-2 text-sky-500"/>
+              
                     {t.testType}
                   </label>
                   <select id="templateId" value={formData.templateId} onChange={handleInputChange} className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm">
@@ -176,39 +175,35 @@ const AddTestModal = ({ isOpen, onClose, onTestAdded }) => {
                 </div>
                 <div>
                   <label className="flex items-center text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                    <Type className="w-4 h-4 mr-2 text-sky-500"/>
-                    {t.testMethod}
+                    
+                    테스트 환경
                   </label>
-                  <select id="testMethod" value={formData.testMethod} onChange={handleInputChange} className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm">
-                    <option>자동</option>
-                    <option>수동</option>
+                  <select id="testEnvironment" value={formData.testEnvironment} onChange={handleInputChange} className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm">
+                    <option value="stage">Stage</option>
+                    <option value="dev">Dev</option>
+                    <option value="prod">Production</option>
+                    <option value="preview">Preview</option>
                   </select>
                 </div>
               </div>
               <div className="mb-6">
                 <label htmlFor="testName" className="flex items-center text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                  <Type className="w-4 h-4 mr-2 text-sky-500"/>
+                  
                   {t.testName}
                 </label>
                 <input type="text" id="testName" value={formData.testName} onChange={handleInputChange} placeholder={t.placeholderTestName} className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm" />
               </div>
               <div className="mb-6">
                 <label htmlFor="projectName" className="flex items-center text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                  <Briefcase className="w-4 h-4 mr-2 text-sky-500"/>
+                
                   {t.projectName}
                 </label>
                 <input type="text" id="projectName" value={formData.projectName} onChange={handleInputChange} placeholder={t.placeholderProjectName} className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm" />
               </div>
-              <div className="mb-6">
-                <label htmlFor="testUrl" className="flex items-center text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                  <Link2 className="w-4 h-4 mr-2 text-sky-500"/>
-                  테스트 대상 URL
-                </label>
-                <input type="url" id="testUrl" value={formData.testUrl} onChange={handleInputChange} placeholder="https://example.com" className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm" />
-              </div>
+
               <div className="mb-8">
                 <label htmlFor="scriptPath" className="flex items-center text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                  <TestTube className="w-4 h-4 mr-2 text-sky-500"/>
+                 
                   실행 스크립트
                 </label>
                 <select id="scriptPath" value={formData.scriptPath} onChange={handleInputChange} className="w-full px-4 py-3 border border-cool-gray-200 dark:border-cool-gray-600 rounded-lg bg-cool-gray-50 dark:bg-cool-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 shadow-sm">

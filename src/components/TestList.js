@@ -187,6 +187,7 @@ const TestList = ({ darkMode }) => {
                 <th scope="col" className="px-6 py-3">Case No.</th>
                 <th scope="col" className="px-6 py-3">Project Name</th>
                 <th scope="col" className="px-6 py-3">Test Name</th>
+                <th scope="col" className="px-6 py-3">Environment</th>
                 <th scope="col" className="px-6 py-3">Progress</th>
                 <th scope="col" className="px-6 py-3">Status</th>
                 <th scope="col" className="px-6 py-3">Created At</th>
@@ -214,6 +215,17 @@ const TestList = ({ darkMode }) => {
                     <td className="px-6 py-4"><Link to={`/tests/${test.id}`} className="hover:underline">{test.caseNumber}</Link></td>
                     <td className="px-6 py-4"><Link to={`/tests/${test.id}`} className="hover:underline">{test.projectName}</Link></td>
                     <td className="px-6 py-4"><Link to={`/tests/${test.id}`} className="hover:underline">{test.testName}</Link></td>
+                    <td className="px-6 py-4">
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${
+                        test.testEnvironment === 'prod' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
+                        test.testEnvironment === 'stage' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' :
+                        test.testEnvironment === 'dev' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
+                        test.testEnvironment === 'preview' ? 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' :
+                        'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
+                      }`}>
+                        {test.testEnvironment || 'N/A'}
+                      </span>
+                    </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
                         <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mr-2">

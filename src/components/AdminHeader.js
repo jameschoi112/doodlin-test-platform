@@ -36,20 +36,13 @@ const AdminHeader = () => {
             />
           </div>
           <h1 className="text-xl font-bold text-gray-800 dark:text-white tracking-wide">
-            TESTING <span className="text-sky-500">PLATFROM</span> 
+            TESTING <span className="text-sky-500">PLATFORM</span> 
           </h1>
         </div>
 
         <div className="flex items-center space-x-6">
 
-          {/* System Status */}
-          <div className="flex items-center space-x-2">
-            <div className="relative">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping opacity-75"></div>
-            </div>
-            <span className="text-sm font-medium text-green-600 dark:text-green-400">{t.systemOnline}</span>
-          </div>
+
 
           {/* User Profile */}
           <div className="relative">

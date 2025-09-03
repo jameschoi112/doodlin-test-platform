@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart3, Users, MessageSquare, Settings, Moon, Sun, UserPlus, ClipboardList, TestTube, Calendar } from 'lucide-react';
+import { BarChart3, Users, MessageSquare, Settings, Moon, Sun, UserPlus, ClipboardList, BarChart2, Calendar } from 'lucide-react';
 import { translations } from '../data';
 import Toggle from './Toggle';
 import AddUserModal from './AddUserModal'; // We will create this component next
@@ -12,8 +12,8 @@ const Sidebar = ({ activeMenu, setActiveMenu, darkMode, setDarkMode }) => {
 
   const menuItems = [
     { id: 'dashboard', label: t.dashboard, icon: BarChart3, path: '/' },
-    { id: 'testList', label: '테스트 목록', icon: TestTube, path: '/tests' },
-    { id: 'templates', label: '테스트 탬플릿 정의', icon: ClipboardList, path: '/templates' },
+    { id: 'testList', label: '테스트 목록', icon: BarChart2, path: '/tests' },
+    { id: 'templates', label: '테스트 템플릿 정의', icon: ClipboardList, path: '/templates' },
     { id: 'schedule', label: '테스트 일정', icon: Calendar, path: '/schedule' },
     { id: 'settings', label: t.settings, icon: Settings, path: '/settings' }
   ];

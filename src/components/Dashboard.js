@@ -7,7 +7,7 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import { db } from '../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
-import { Users, MessageSquare, ArrowUpRight, UserPlus, Activity, TrendingUp, Eye, Clock, Target, Car, Calendar as CalendarIcon, HelpCircle } from 'lucide-react';
+import { Users, MessageSquare, ArrowUpRight, Activity, TrendingUp, Target,  Calendar as CalendarIcon, HelpCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 moment.updateLocale('ko', {

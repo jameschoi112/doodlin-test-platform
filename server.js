@@ -8,8 +8,7 @@ const { spawn } = require('child_process');
 const fs = require('fs/promises');
 const admin = require('firebase-admin');
 
-// .env 파일에 GOOGLE_APPLICATION_CREDENTIALS 설정 필요
-// 예: GOOGLE_APPLICATION_CREDENTIALS="./dodlin-test-platform-firebase-adminsdk-b1hmy-9809e8165f.json"
+// Firebase Admin 초기화
 admin.initializeApp({
   credential: admin.credential.applicationDefault(),
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET
@@ -22,14 +21,25 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:3000", "http://10.150.10.160:3000"],
-    methods: ["GET", "POST"]
+    origin: ["http://localhost:3000", "http://172.30.2.178:3000", "http://172.30.2.178:3001"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
   }
 });
 
 const port = 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "http://172.30.2.178:3000", "http://172.30.2.178:3001"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+
+// Preflight 요청 처리
+app.options('*', cors());
+
 app.use(express.json());
 
 io.on('connection', (socket) => {
@@ -44,7 +54,7 @@ app.get('/api/scripts', async (req, res) => {
   const scriptsDir = path.join(__dirname, 'scripts');
   try {
     const files = await fs.readdir(scriptsDir);
-    const scriptFiles = files.filter(file => file.endsWith('.js') || file.endsWith('.spec.js'));
+    const scriptFiles = files.filter(file => file.endsWith('.js') || file.endsWith('.spec.js') || file.endsWith('.ts') || file.endsWith('.spec.ts'));
     res.json(scriptFiles);
   } catch (error) {
     console.error('Error reading scripts directory:', error);

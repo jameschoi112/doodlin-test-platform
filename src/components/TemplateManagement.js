@@ -158,7 +158,7 @@ const TemplateManagement = () => {
             <thead className="text-xs text-gray-700 uppercase bg-cool-gray-50 dark:bg-cool-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3"><FileText className="inline-block mr-2" size={14} />템플릿 이름</th>
-                <th scope="col" className="px-6 py-3"><Hash className="inline-block mr-2" size={14} />스텝 수</th>
+                <th scope="col" className="px-6 py-3"><Hash className="inline-block mr-2" size={14} />테스트 단계 갯수</th>
                 <th scope="col" className="px-6 py-3"><Calendar className="inline-block mr-2" size={14} />생성일</th>
                 <th scope="col" className="px-6 py-3"><span className="sr-only">Actions</span></th>
               </tr>

@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Doodlin Test Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+웹 애플리케이션 테스트를 위한 통합 플랫폼입니다.
 
-## Available Scripts
+## 주요 기능
 
-In the project directory, you can run:
+- 🧪 **자동화 테스트 실행**: Playwright를 사용한 웹 테스트 자동화
+- 📊 **실시간 테스트 모니터링**: 웹소켓을 통한 실시간 테스트 상태 추적
+- 🖼️ **스크린샷 캡처**: 테스트 실패 시 자동 스크린샷 저장
+- 🔄 **다중 환경 지원**: Stage, Dev, Production, Preview 환경별 테스트
+- 📋 **테스트 케이스 관리**: Firebase 기반 테스트 케이스 저장 및 관리
 
-### `npm start`
+## Greeting 테스트
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 환경 설정
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+프로젝트는 4가지 환경을 지원합니다:
 
-### `npm test`
+- **Stage** (기본값): 개발 테스트용
+- **Dev**: 개발자 테스트용  
+- **Production**: 실제 운영 환경
+- **Preview**: 배포 전 검증용
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 환경변수 설정
 
-### `npm run build`
+```bash
+# Stage 환경 설정 (기본값)
+source scripts/set-env.sh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Dev 환경 설정
+source scripts/set-env.sh dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Production 환경 설정
+source scripts/set-env.sh prod
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Preview 환경 설정
+source scripts/set-env.sh preview
+```
 
-### `npm run eject`
+### Greeting 테스트 실행
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# 환경변수 설정 후
+npx playwright test scripts/greeting.spec.ts
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 테스트 시나리오
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **로그인 페이지 진입 확인**
+   - 브라우저 실행 및 페이지 이동
+   - URL 및 로그인 텍스트 확인
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **로그인 실패 케이스 테스트**
+   - 랜덤 이메일/비밀번호 입력
+   - 에러 메시지 표시 확인
 
-## Learn More
+3. **로그인 성공 케이스 테스트**
+   - 정상 계정 정보 입력
+   - 팝업 처리 및 로그인 후 페이지 확인
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 프로젝트 구조
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+scripts/
+├── greeting.spec.ts          # Greeting 전용 테스트 파일
+├── greeting.env.js           # 환경 설정 파일
+├── set-env.sh               # 환경변수 설정 스크립트
+└── web2x.spec.ts            # 기존 WEB2X 테스트 파일
 
-### Code Splitting
+src/
+├── components/
+│   ├── AddTestModal.js       # 테스트 추가 모달 (환경 선택 포함)
+│   ├── TestList.js           # 테스트 목록 (환경 정보 표시)
+│   └── TestDetail.js         # 테스트 상세 (환경 정보 표시)
+└── ...
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 설치 및 실행
 
-### Analyzing the Bundle Size
+### 의존성 설치
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+### 개발 서버 실행
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+### 테스트 실행
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+# 전체 테스트
+npm test
 
-### Deployment
+# 특정 테스트 파일
+npx playwright test scripts/greeting.spec.ts
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 환경별 URL
 
-### `npm run build` fails to minify
+- **Stage**: https://app.staging.greetinghr.com
+- **Dev**: https://app.dev.greetinghr.com  
+- **Production**: https://app.greetinghr.com
+- **Preview**: https://app.preview.greetinghr.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 주의사항
+
+- Production 환경 테스트 시 주의가 필요합니다
+- 테스트 계정 정보는 환경 설정 파일에서 관리됩니다
+- 스크린샷은 테스트 실패 시 자동으로 캡처됩니다
+
+## 기술 스택
+
+- **Frontend**: React, Tailwind CSS, Framer Motion
+- **Backend**: Node.js, Express, Socket.io
+- **Database**: Firebase Firestore
+- **Testing**: Playwright
+- **Build Tool**: Create React App
